@@ -1,0 +1,249 @@
+.clv-motion-page {
+  background: var(--clv-color-surface-canvas);
+  color: var(--clv-color-text-primary);
+  display: grid;
+  font-family: var(--clv-typography-body-default-font-family);
+  gap: var(--clv-spacing-section-md);
+  min-block-size: 100vh;
+  padding: var(--clv-spacing-section-md) var(--clv-layout-gutter-compact);
+}
+
+.clv-motion-page :is(h1, h2, p, ol, small) {
+  margin: 0;
+}
+
+.clv-motion-page__intro,
+.clv-motion-section,
+.clv-motion-section > header,
+.clv-motion-grid li,
+.clv-motion-role-grid article,
+.clv-motion-pilot-grid article,
+.clv-motion-cycle-grid article,
+.clv-motion-rule-grid article {
+  display: grid;
+}
+
+.clv-motion-page__intro {
+  gap: var(--clv-spacing-flow-stack-sm);
+  max-inline-size: var(--clv-layout-container-reading);
+}
+
+.clv-motion-page__eyebrow {
+  color: var(--clv-color-action-primary);
+  font-size: var(--clv-typography-label-compact-font-size);
+  font-weight: var(--clv-typography-label-compact-font-weight);
+  letter-spacing: var(--clv-font-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.clv-motion-page__intro h1 {
+  font-size: var(--clv-typography-heading-page-font-size);
+  font-weight: var(--clv-typography-heading-page-font-weight);
+  line-height: var(--clv-typography-heading-page-line-height);
+}
+
+.clv-motion-page__intro > p:last-child,
+.clv-motion-section__description,
+.clv-motion-grid p,
+.clv-motion-role-grid p,
+.clv-motion-pilot-grid p,
+.clv-motion-cycle-grid p,
+.clv-motion-rule-grid p {
+  color: var(--clv-color-text-secondary);
+  line-height: var(--clv-typography-body-long-line-height);
+}
+
+.clv-motion-section,
+.clv-motion-section > header {
+  gap: var(--clv-spacing-flow-stack-sm);
+}
+
+.clv-motion-grid,
+.clv-motion-role-grid,
+.clv-motion-pilot-grid,
+.clv-motion-cycle-grid,
+.clv-motion-rule-grid {
+  display: grid;
+  gap: var(--clv-layout-grid-gap-compact);
+  list-style: none;
+  padding: 0;
+}
+
+.clv-motion-grid li,
+.clv-motion-role-grid article,
+.clv-motion-pilot-grid article,
+.clv-motion-cycle-grid article,
+.clv-motion-rule-grid article {
+  background: var(--clv-color-surface-raised);
+  border: var(--clv-border-width-thin) var(--clv-border-style-solid) var(--clv-color-border-subtle);
+  border-radius: var(--clv-shape-surface);
+  gap: var(--clv-spacing-flow-stack-sm);
+  min-inline-size: 0;
+  padding: var(--clv-spacing-inset-md);
+}
+
+.clv-motion-duration-sample,
+.clv-motion-easing-sample {
+  background: var(--clv-color-action-primary);
+  border-radius: var(--clv-radius-pill);
+  display: block;
+  block-size: var(--clv-space-3);
+  inline-size: var(--clv-space-10);
+}
+
+.clv-motion-duration-sample {
+  transition: transform var(--clv-motion-demo-duration) var(--clv-motion-easing-standard);
+}
+
+.clv-motion-duration-sample.is-instant {
+  --clv-motion-demo-duration: var(--clv-motion-duration-instant);
+}
+
+.clv-motion-duration-sample.is-fast {
+  --clv-motion-demo-duration: var(--clv-motion-duration-fast);
+}
+
+.clv-motion-duration-sample.is-moderate {
+  --clv-motion-demo-duration: var(--clv-motion-duration-moderate);
+}
+
+.clv-motion-duration-sample.is-slow {
+  --clv-motion-demo-duration: var(--clv-motion-duration-slow);
+}
+
+.clv-motion-easing-sample {
+  transition: transform var(--clv-motion-duration-slow) var(--clv-motion-demo-easing);
+}
+
+.clv-motion-grid li:is(:hover, :focus-within) .clv-motion-duration-sample {
+  transform: translateX(var(--clv-space-8));
+}
+
+.clv-motion-grid li:is(:hover, :focus-within) .clv-motion-easing-sample {
+  transform: translateX(var(--clv-space-12));
+}
+
+.clv-motion-easing-sample.is-standard {
+  --clv-motion-demo-easing: var(--clv-motion-easing-standard);
+}
+
+.clv-motion-easing-sample.is-decelerate {
+  --clv-motion-demo-easing: var(--clv-motion-easing-decelerate);
+}
+
+.clv-motion-easing-sample.is-accelerate {
+  --clv-motion-demo-easing: var(--clv-motion-easing-accelerate);
+}
+
+.clv-motion-easing-sample.is-linear {
+  --clv-motion-demo-easing: var(--clv-motion-easing-linear);
+}
+
+.clv-motion-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--clv-spacing-flow-inline-sm);
+}
+
+.clv-motion-enter-demo {
+  animation: clv-motion-foundation-enter var(--clv-motion-enter-duration)
+    var(--clv-motion-enter-easing) both;
+}
+
+.clv-motion-pilot-grid .clv-tooltip__trigger {
+  block-size: var(--clv-control-height-md);
+  inline-size: var(--clv-control-height-md);
+}
+
+.clv-motion-pilot-grid article:nth-child(2) {
+  min-block-size: 12rem;
+}
+
+.clv-motion-cycle-grid[data-paused="true"] *,
+.clv-motion-cycle-grid[data-paused="true"] *::before,
+.clv-motion-cycle-grid[data-paused="true"] *::after {
+  animation-play-state: paused;
+}
+
+.clv-motion-cycle-grid article:last-child {
+  align-content: start;
+}
+
+.clv-motion-page[data-motion-reduced="true"] *,
+.clv-motion-page[data-motion-reduced="true"] *::before,
+.clv-motion-page[data-motion-reduced="true"] *::after {
+  animation-duration: 0ms;
+  animation-iteration-count: 1;
+  scroll-behavior: auto;
+  transition-duration: 0ms;
+}
+
+.clv-motion-page[data-motion-reduced="true"] .clv-motion-enter-demo,
+.clv-motion-page[data-motion-reduced="true"] :is([data-entering="true"], [data-exiting="true"]) {
+  transform: none;
+}
+
+@media (min-width: 40rem) {
+  .clv-motion-page {
+    padding-inline: var(--clv-layout-gutter-regular);
+  }
+
+  .clv-motion-grid,
+  .clv-motion-role-grid,
+  .clv-motion-pilot-grid,
+  .clv-motion-cycle-grid,
+  .clv-motion-rule-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .clv-motion-page {
+    padding-inline: var(--clv-layout-gutter-wide);
+  }
+
+  .clv-motion-grid--duration,
+  .clv-motion-grid--easing,
+  .clv-motion-cycle-grid,
+  .clv-motion-rule-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .clv-motion-role-grid,
+  .clv-motion-pilot-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clv-motion-duration-sample,
+  .clv-motion-easing-sample {
+    transition: none;
+  }
+
+  .clv-motion-enter-demo {
+    animation: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .clv-motion-grid li,
+  .clv-motion-role-grid article,
+  .clv-motion-pilot-grid article,
+  .clv-motion-cycle-grid article,
+  .clv-motion-rule-grid article {
+    border-color: CanvasText;
+  }
+
+  .clv-motion-duration-sample,
+  .clv-motion-easing-sample {
+    background: Highlight;
+  }
+}
+
+@keyframes clv-motion-foundation-enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--clv-space-1));
+  }
+}

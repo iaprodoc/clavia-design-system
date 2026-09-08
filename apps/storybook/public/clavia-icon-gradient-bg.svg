@@ -1,0 +1,41 @@
+<svg width="456" height="456" viewBox="0 0 456 456" fill="none" xmlns="http://www.w3.org/2000/svg">
+<title>Fundo em gradiente do ícone da Clavia</title>
+<g clip-path="url(#clip0_4001_47)">
+<mask id="mask0_4001_47" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="456" height="456">
+<rect width="456" height="456" fill="#021826"/>
+</mask>
+<g mask="url(#mask0_4001_47)">
+<rect width="471" height="467" fill="#021826"/>
+<g filter="url(#filter0_f_4001_47)">
+<circle cx="447" cy="443" r="189" fill="#D9D9D9"/>
+</g>
+<g filter="url(#filter1_f_4001_47)">
+<ellipse cx="334" cy="97" rx="249" ry="211" fill="#224E82" fill-opacity="0.89"/>
+</g>
+<g filter="url(#filter2_f_4001_47)" style="mix-blend-mode:overlay">
+<circle cx="222" cy="507" r="279" fill="#224E82"/>
+</g>
+</g>
+<path d="M302 267.298V188.139C302 156.084 275.784 130 243.543 130H168.509V156.207H243.543C248.068 156.207 252.347 157.137 256.257 158.825L168.509 244.321C154.614 257.853 150.36 277.257 157.221 295.217C164.427 314.034 183.191 326 203.431 326H288.818C296.098 326 302 320.127 302 312.884V299.769H202.89C193.668 299.769 185.036 294.337 181.814 285.723C178.765 277.599 180.683 269.157 186.954 263.04L274.038 178.18C275.071 181.312 275.661 184.64 275.661 188.115V267.273H302V267.298Z" fill="#EFEEED"/>
+</g>
+<defs>
+<filter id="filter0_f_4001_47" x="139" y="135" width="616" height="616" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="59.5" result="effect1_foregroundBlur_4001_47"/>
+</filter>
+<filter id="filter1_f_4001_47" x="-34" y="-233" width="736" height="660" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="59.5" result="effect1_foregroundBlur_4001_47"/>
+</filter>
+<filter id="filter2_f_4001_47" x="-176" y="109" width="796" height="796" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="59.5" result="effect1_foregroundBlur_4001_47"/>
+</filter>
+<clipPath id="clip0_4001_47">
+<rect width="456" height="456" rx="116" fill="white"/>
+</clipPath>
+</defs>
+</svg>

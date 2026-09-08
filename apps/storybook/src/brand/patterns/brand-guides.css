@@ -1,0 +1,444 @@
+.clv-brand-guides-story {
+  --clv-brand-guide-check: var(--clv-color-text-on-brand-muted);
+  --clv-brand-guide-content: var(--clv-color-text-on-brand-muted);
+  background: var(--clv-color-surface-brand);
+  color: var(--clv-color-text-on-brand);
+  min-height: 100vh;
+  overflow: hidden;
+  padding-block: clamp(var(--clv-space-8), 8vw, var(--clv-space-12));
+}
+
+.clv-brand-guides-frame {
+  --clv-brand-guide-cutout-radius: calc(var(--clv-space-5) / 2);
+  --clv-brand-guide-line: var(--clv-color-border-on-brand);
+  background: var(--clv-gradient-surface-brand), var(--clv-color-surface-brand);
+  container-type: inline-size;
+  isolation: isolate;
+  margin-inline: auto;
+  max-width: 72rem;
+  position: relative;
+}
+
+.clv-brand-guides-story--light {
+  --clv-brand-guide-check: var(--clv-color-action-primary);
+  --clv-brand-guide-content: var(--clv-color-text-secondary);
+  background: var(--clv-color-surface-canvas);
+  color: var(--clv-color-text-primary);
+}
+
+.clv-brand-guides-story--light .clv-brand-guides-frame {
+  --clv-brand-guide-line: var(--clv-color-border-subtle);
+  background: var(--clv-color-surface-canvas);
+}
+
+.clv-brand-guides-frame__decoration {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.clv-brand-guides-line {
+  background: var(--clv-brand-guide-line);
+  display: block;
+  position: absolute;
+}
+
+.clv-brand-guides-line--top,
+.clv-brand-guides-line--middle,
+.clv-brand-guides-line--bottom {
+  height: 1px;
+  inline-size: 100vw;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+}
+
+.clv-brand-guides-line--top,
+.clv-brand-guides-line--bottom {
+  mask-composite: intersect, intersect;
+  mask-image:
+    radial-gradient(
+      circle at calc(50% - 50cqi) 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at calc(50% + 50cqi) 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    );
+  -webkit-mask-composite: source-in, source-in;
+  -webkit-mask-image:
+    radial-gradient(
+      circle at calc(50% - 50cqi) 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at calc(50% + 50cqi) 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    );
+}
+
+.clv-brand-guides-line--middle {
+  mask-composite: intersect, intersect;
+  mask-image:
+    radial-gradient(
+      circle at calc(50% - 50cqi) 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at calc(50% + 50cqi) 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    );
+  -webkit-mask-composite: source-in, source-in;
+  -webkit-mask-image:
+    radial-gradient(
+      circle at calc(50% - 50cqi) 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at calc(50% + 50cqi) 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    );
+}
+
+.clv-brand-guides-line--top {
+  inset-block-start: 0;
+}
+
+.clv-brand-guides-line--middle {
+  inset-block-start: 50%;
+}
+
+.clv-brand-guides-line--bottom {
+  inset-block-end: 0;
+}
+
+.clv-brand-guides-line--rail-start,
+.clv-brand-guides-line--vertical,
+.clv-brand-guides-line--rail-end {
+  block-size: 100%;
+  inline-size: 1px;
+  inset-block-start: 0;
+}
+
+.clv-brand-guides-line--rail-start {
+  inset-inline-start: 0;
+}
+
+.clv-brand-guides-line--vertical {
+  inset-inline-start: 50%;
+  mask-composite: intersect, intersect;
+  mask-image:
+    radial-gradient(
+      circle at 50% 0,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    );
+  -webkit-mask-composite: source-in, source-in;
+  -webkit-mask-image:
+    radial-gradient(
+      circle at 50% 0,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    );
+}
+
+.clv-brand-guides-line--rail-end {
+  inset-inline-start: 100%;
+}
+
+.clv-brand-guides-line--rail-start,
+.clv-brand-guides-line--rail-end {
+  mask-composite: intersect, intersect;
+  mask-image:
+    radial-gradient(
+      circle at 50% 0,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    );
+  -webkit-mask-composite: source-in, source-in;
+  -webkit-mask-image:
+    radial-gradient(
+      circle at 50% 0,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      transparent 0 var(--clv-brand-guide-cutout-radius),
+      #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+    );
+}
+
+.clv-brand-guides-node {
+  align-items: center;
+  border-radius: var(--clv-radius-pill);
+  display: flex;
+  height: var(--clv-space-5);
+  justify-content: center;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: var(--clv-space-5);
+}
+
+.clv-brand-guides-node__dot {
+  background: var(--clv-brand-guide-line);
+  border-radius: var(--clv-radius-pill);
+  height: var(--clv-space-2);
+  width: var(--clv-space-2);
+}
+
+.clv-brand-guides-node--top-start,
+.clv-brand-guides-node--middle-start,
+.clv-brand-guides-node--bottom-start {
+  inset-inline-start: 0;
+}
+
+.clv-brand-guides-node--top-end,
+.clv-brand-guides-node--middle-end,
+.clv-brand-guides-node--bottom-end {
+  inset-inline-start: 100%;
+}
+
+.clv-brand-guides-node--top-start,
+.clv-brand-guides-node--top-center,
+.clv-brand-guides-node--top-end {
+  inset-block-start: 0;
+}
+
+.clv-brand-guides-node--top-center,
+.clv-brand-guides-node--bottom-center {
+  inset-inline-start: 50%;
+}
+
+.clv-brand-guides-node--middle-start,
+.clv-brand-guides-node--middle-center,
+.clv-brand-guides-node--middle-end {
+  inset-block-start: 50%;
+}
+
+.clv-brand-guides-node--middle-center {
+  inset-inline-start: 50%;
+}
+
+.clv-brand-guides-node--bottom-start,
+.clv-brand-guides-node--bottom-center,
+.clv-brand-guides-node--bottom-end {
+  inset-block-start: 100%;
+}
+
+.clv-brand-guides-frame__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(18rem, 1fr));
+  min-height: 40rem;
+  position: relative;
+  z-index: 1;
+}
+
+.clv-brand-guides-cell {
+  align-content: center;
+  display: grid;
+  gap: var(--clv-space-3);
+  padding: clamp(var(--clv-space-6), 5vw, var(--clv-space-10));
+}
+
+.clv-brand-guides-cell > * {
+  margin: 0;
+}
+
+.clv-brand-guides-cell h1,
+.clv-brand-guides-cell h2 {
+  letter-spacing: 0;
+  line-height: var(--clv-font-line-height-tight);
+}
+
+.clv-brand-guides-cell h1 {
+  font-size: clamp(2.25rem, 5.5vw, 4rem);
+  font-weight: var(--clv-font-weight-light);
+  line-height: 1.05;
+  max-width: 14ch;
+}
+
+.clv-brand-guides-cell h2 {
+  font-size: clamp(1.625rem, 2.5vw, 1.75rem);
+  font-weight: var(--clv-font-weight-light);
+  max-width: 24ch;
+}
+
+.clv-brand-guides-cell p:not(.clv-brand-guides-eyebrow),
+.clv-brand-guides-cell li {
+  color: var(--clv-brand-guide-content);
+  font-size: var(--clv-font-size-sm);
+  font-weight: var(--clv-font-weight-light);
+  line-height: var(--clv-font-line-height-relaxed);
+}
+
+.clv-brand-guides-cell p:not(.clv-brand-guides-eyebrow) {
+  max-width: 42rem;
+}
+
+.clv-brand-guides-cell ul {
+  display: grid;
+  gap: var(--clv-space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.clv-brand-guides-cell li {
+  align-items: start;
+  display: grid;
+  gap: var(--clv-space-2);
+  grid-template-columns: var(--clv-space-4) minmax(0, 1fr);
+}
+
+.clv-brand-guides-check {
+  color: var(--clv-brand-guide-check);
+  height: var(--clv-space-4);
+  margin-top: 0.15em;
+  width: var(--clv-space-4);
+}
+
+.clv-brand-guides-eyebrow {
+  color: var(--clv-brand-guide-content);
+  font-size: var(--clv-font-size-xs);
+  font-weight: var(--clv-font-weight-light);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 47.9375rem) {
+  .clv-brand-guides-frame__grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    min-height: auto;
+  }
+
+  .clv-brand-guides-cell {
+    min-height: 13rem;
+  }
+
+  .clv-brand-guides-cell + .clv-brand-guides-cell {
+    border-block-start: 1px solid var(--clv-brand-guide-line);
+  }
+
+  .clv-brand-guides-line--middle,
+  .clv-brand-guides-line--vertical,
+  .clv-brand-guides-node--top-center,
+  .clv-brand-guides-node--middle-start,
+  .clv-brand-guides-node--middle-center,
+  .clv-brand-guides-node--middle-end,
+  .clv-brand-guides-node--bottom-center {
+    display: none;
+  }
+
+  .clv-brand-guides-line--top,
+  .clv-brand-guides-line--bottom {
+    mask-composite: intersect;
+    mask-image:
+      radial-gradient(
+        circle at calc(50% - 50cqi) 50%,
+        transparent 0 var(--clv-brand-guide-cutout-radius),
+        #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+      ),
+      radial-gradient(
+        circle at calc(50% + 50cqi) 50%,
+        transparent 0 var(--clv-brand-guide-cutout-radius),
+        #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+      );
+    -webkit-mask-composite: source-in;
+    -webkit-mask-image:
+      radial-gradient(
+        circle at calc(50% - 50cqi) 50%,
+        transparent 0 var(--clv-brand-guide-cutout-radius),
+        #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+      ),
+      radial-gradient(
+        circle at calc(50% + 50cqi) 50%,
+        transparent 0 var(--clv-brand-guide-cutout-radius),
+        #000 calc(var(--clv-brand-guide-cutout-radius) + 0.5px)
+      );
+  }
+}
+
+@media (forced-colors: active) {
+  .clv-brand-guides-story,
+  .clv-brand-guides-frame {
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  .clv-brand-guides-frame {
+    --clv-brand-guide-line: CanvasText;
+  }
+
+  .clv-brand-guides-cell p:not(.clv-brand-guides-eyebrow),
+  .clv-brand-guides-cell li,
+  .clv-brand-guides-eyebrow,
+  .clv-brand-guides-check {
+    color: CanvasText;
+  }
+}

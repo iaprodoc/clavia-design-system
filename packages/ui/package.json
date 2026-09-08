@@ -1,0 +1,39 @@
+{
+  "name": "@clavia-ds/ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "./dist/styles.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "peerDependencies": {
+    "react": ">=18 <20",
+    "react-dom": ">=18 <20"
+  },
+  "dependencies": {
+    "@clavia-ds/icons": "workspace:*",
+    "@clavia-ds/tokens": "workspace:*",
+    "react-aria-components": "1.20.0"
+  },
+  "dependenciesMeta": {
+    "@clavia-ds/icons": {
+      "injected": true
+    }
+  },
+  "scripts": {
+    "build": "node scripts/clean-dist.mjs && tsc -p tsconfig.build.json && node scripts/fix-esm-imports.mjs && node scripts/copy-static.mjs",
+    "pack:check": "pnpm build && node ../../scripts/pack-check.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}

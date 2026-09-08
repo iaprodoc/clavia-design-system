@@ -1,0 +1,251 @@
+.clv-brand-gradient-bars {
+  --clv-brand-bars-cycle: 5.4s;
+  --clv-brand-bars-dark: var(--clv-color-surface-brand);
+  --clv-brand-bars-mid: var(--clv-color-action-primary);
+  --clv-brand-bars-highlight: var(--clv-color-primitive-blue-7);
+  aspect-ratio: 540 / 983;
+  background: var(--clv-brand-bars-dark);
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.clv-brand-gradient-bars__bar {
+  --clv-brand-bar-delay: 0s;
+  --clv-brand-bar-direction: alternate;
+  --clv-brand-bar-duration: var(--clv-brand-bars-cycle);
+  --clv-brand-bar-gradient: linear-gradient(
+    180deg,
+    var(--clv-brand-bars-dark),
+    var(--clv-brand-bars-mid)
+  );
+  background: var(--clv-brand-bars-dark);
+  inline-size: calc(100% + 1px);
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.clv-brand-gradient-bars__bar::before {
+  animation: clv-brand-gradient-bar-drift var(--clv-brand-bar-duration) var(--clv-motion-easing)
+    var(--clv-brand-bar-delay) infinite;
+  animation-direction: var(--clv-brand-bar-direction);
+  background: var(--clv-brand-bar-gradient);
+  content: "";
+  inset: -28% 0;
+  position: absolute;
+  transform: translate3d(0, -14%, 0);
+  will-change: transform;
+}
+
+.clv-brand-gradient-bars__bar:nth-child(1) {
+  --clv-brand-bar-delay: -5s;
+  --clv-brand-bar-direction: alternate-reverse;
+  --clv-brand-bar-duration: 5.2s;
+}
+
+.clv-brand-gradient-bars__bar:nth-child(2) {
+  --clv-brand-bar-delay: -2s;
+  --clv-brand-bar-direction: alternate;
+  --clv-brand-bar-duration: 4.8s;
+  --clv-brand-bar-gradient: linear-gradient(
+    180deg,
+    var(--clv-brand-bars-dark) 6%,
+    var(--clv-brand-bars-mid) 55%,
+    var(--clv-brand-bars-dark) 95%
+  );
+}
+
+.clv-brand-gradient-bars__bar:nth-child(3) {
+  --clv-brand-bar-delay: -8s;
+  --clv-brand-bar-direction: alternate-reverse;
+  --clv-brand-bar-duration: 5.8s;
+  --clv-brand-bar-gradient: linear-gradient(
+    180deg,
+    var(--clv-brand-bars-dark) 25%,
+    var(--clv-brand-bars-mid) 71%,
+    var(--clv-brand-bars-dark) 93%
+  );
+}
+
+.clv-brand-gradient-bars__bar:nth-child(4) {
+  --clv-brand-bar-delay: -11s;
+  --clv-brand-bar-duration: 6.4s;
+  --clv-brand-bar-gradient: linear-gradient(
+    180deg,
+    var(--clv-brand-bars-dark) 6%,
+    var(--clv-brand-bars-mid) 38%,
+    var(--clv-brand-bars-highlight) 60%,
+    var(--clv-brand-bars-dark) 83%
+  );
+}
+
+.clv-brand-gradient-bars__bar:nth-child(5) {
+  --clv-brand-bar-delay: -4s;
+  --clv-brand-bar-direction: alternate-reverse;
+  --clv-brand-bar-duration: 4.6s;
+  --clv-brand-bar-gradient: linear-gradient(
+    180deg,
+    var(--clv-brand-bars-mid) 0%,
+    var(--clv-brand-bars-dark) 30%,
+    var(--clv-brand-bars-dark) 73%
+  );
+}
+
+.clv-brand-gradient-bars__bar:nth-child(6) {
+  --clv-brand-bar-delay: -9s;
+  --clv-brand-bar-duration: 5.4s;
+  --clv-brand-bar-gradient: linear-gradient(
+    180deg,
+    var(--clv-brand-bars-dark) 24%,
+    var(--clv-brand-bars-mid) 56%,
+    var(--clv-brand-bars-dark) 88%
+  );
+}
+
+.clv-brand-gradient-bars[data-motion="still"] .clv-brand-gradient-bars__bar::before {
+  animation: none;
+  transform: none;
+}
+
+@keyframes clv-brand-gradient-bar-drift {
+  from {
+    transform: translate3d(0, -14%, 0);
+  }
+
+  to {
+    transform: translate3d(0, 14%, 0);
+  }
+}
+
+.clv-brand-gradient-bars-story {
+  align-items: center;
+  background: var(--clv-color-surface-canvas);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: clamp(var(--clv-space-4), 6vw, var(--clv-space-10));
+}
+
+.clv-brand-gradient-piece {
+  aspect-ratio: 1;
+  background: var(--clv-color-surface-brand);
+  border-radius: var(--clv-radius-xl);
+  box-shadow: var(--clv-effect-glow-brand);
+  color: var(--clv-color-text-on-brand);
+  isolation: isolate;
+  max-height: calc(100vh - 2 * var(--clv-space-8));
+  overflow: hidden;
+  position: relative;
+  width: min(100%, 30.1875rem);
+}
+
+.clv-brand-gradient-piece__bars {
+  aspect-ratio: auto;
+  height: 100%;
+  inset-block: 0;
+  inset-inline-start: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 112%;
+  z-index: -2;
+}
+
+.clv-brand-gradient-piece__backplate {
+  backdrop-filter: blur(var(--clv-brand-panel-media-backdrop-blur));
+  background: var(--clv-color-surface-brand-glass);
+  border: 1px solid var(--clv-color-border-on-brand);
+  border-radius: var(--clv-radius-lg);
+  box-shadow: var(--clv-effect-highlight-brand);
+  height: 25%;
+  inset-block-start: 24%;
+  inset-inline-start: 23%;
+  position: absolute;
+  width: 54%;
+  -webkit-backdrop-filter: blur(var(--clv-brand-panel-media-backdrop-blur));
+}
+
+.clv-brand-gradient-piece__panel.clv-brand-panel {
+  background: var(--clv-brand-panel-background);
+  gap: 0;
+  inset-block-start: 11.4%;
+  inset-inline-start: 15.1%;
+  min-height: 33%;
+  padding: clamp(var(--clv-space-4), 4vw, var(--clv-space-6));
+  position: absolute;
+  width: 69.8%;
+}
+
+.clv-brand-gradient-piece__panel .clv-brand-panel__content {
+  align-content: start;
+  gap: var(--clv-space-3);
+}
+
+.clv-brand-gradient-piece__panel .clv-brand-panel__title {
+  font-size: clamp(var(--clv-font-size-md), 4.1vw, 1.25rem);
+  font-weight: var(--clv-font-weight-light);
+  line-height: 1.25;
+  max-width: 24ch;
+}
+
+.clv-brand-gradient-piece__panel .clv-brand-panel__description {
+  color: var(--clv-color-text-on-brand-muted);
+  font-size: clamp(var(--clv-font-size-xs), 3.1vw, var(--clv-font-size-md));
+  font-weight: var(--clv-font-weight-light);
+  line-height: 1.35;
+}
+
+.clv-brand-gradient-piece__action {
+  inset-block-end: 8.9%;
+  inset-inline-start: 7%;
+  position: absolute;
+}
+
+.clv-brand-gradient-piece__logo {
+  height: auto;
+  inset-block-end: 10.2%;
+  inset-inline-end: 7.4%;
+  position: absolute;
+  width: 15.6%;
+}
+
+@media (max-width: 47.9375rem) {
+  .clv-brand-gradient-piece {
+    max-height: calc(100vh - 2 * var(--clv-space-4));
+  }
+
+  .clv-brand-gradient-piece__panel.clv-brand-panel {
+    padding: var(--clv-space-4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clv-brand-gradient-bars__bar::before {
+    animation: none;
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .clv-brand-gradient-bars,
+  .clv-brand-gradient-bars__bar,
+  .clv-brand-gradient-piece,
+  .clv-brand-gradient-piece__backplate,
+  .clv-brand-gradient-bars-story {
+    background: Canvas;
+  }
+
+  .clv-brand-gradient-bars__bar::before {
+    animation: none;
+    background: CanvasText;
+    opacity: 0.18;
+    transform: none;
+  }
+
+  .clv-brand-gradient-piece,
+  .clv-brand-gradient-piece__panel .clv-brand-panel__description {
+    color: CanvasText;
+  }
+}

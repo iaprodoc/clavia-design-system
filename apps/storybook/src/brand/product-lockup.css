@@ -1,0 +1,24 @@
+.clv-story-product-lockups {
+  display: grid;
+  gap: var(--clv-space-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  inline-size: min(100%, 40rem);
+}
+
+.clv-story-product-lockups figure {
+  align-content: center;
+  background: var(--clv-color-surface-raised);
+  border: var(--clv-border-width-thin) var(--clv-border-style-solid) var(--clv-color-border-subtle);
+  border-radius: var(--clv-radius-lg);
+  display: grid;
+  gap: var(--clv-space-4);
+  margin: 0;
+  min-block-size: 9rem;
+  padding: var(--clv-space-6);
+}
+
+.clv-story-product-lockups figcaption {
+  color: var(--clv-color-text-muted);
+  font-size: var(--clv-font-size-sm);
+  font-weight: var(--clv-font-weight-light);
+}

@@ -1,0 +1,34 @@
+{
+  "name": "clavia-design-system",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Tokens, ícones, componentes React e Storybook da Clavia.",
+  "packageManager": "pnpm@9.12.0",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "build": "pnpm --filter @clavia-ds/tokens build && pnpm --filter @clavia-ds/icons build && pnpm --filter @clavia-ds/ui build && pnpm --filter @clavia-ds/storybook build",
+    "check": "pnpm lint && pnpm build && pnpm pack:check && pnpm pack:smoke && pnpm install --offline --frozen-lockfile && pnpm typecheck && pnpm test",
+    "format": "biome format --write .",
+    "lint": "biome check .",
+    "pack:check": "pnpm --filter @clavia-ds/tokens pack:check && pnpm --filter @clavia-ds/icons pack:check && pnpm --filter @clavia-ds/ui pack:check",
+    "pack:smoke": "node scripts/consumer-smoke.mjs",
+    "storybook": "pnpm --filter @clavia-ds/storybook storybook",
+    "test": "pnpm --filter @clavia-ds/tokens test && pnpm --filter @clavia-ds/icons test && pnpm --filter @clavia-ds/ui test && pnpm --filter @clavia-ds/storybook test",
+    "typecheck": "pnpm --filter @clavia-ds/tokens typecheck && pnpm --filter @clavia-ds/icons typecheck && pnpm --filter @clavia-ds/ui typecheck && pnpm --filter @clavia-ds/storybook typecheck"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.0",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "jsdom": "^27.4.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2",
+    "vitest": "^4.0.14"
+  }
+}

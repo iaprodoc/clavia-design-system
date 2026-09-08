@@ -1,0 +1,262 @@
+.clv-effects-page {
+  background: var(--clv-color-surface-canvas);
+  color: var(--clv-color-text-primary);
+  display: grid;
+  font-family: var(--clv-typography-body-default-font-family);
+  gap: var(--clv-spacing-section-md);
+  min-block-size: 100vh;
+  padding: var(--clv-spacing-section-md) var(--clv-layout-gutter-compact);
+}
+
+.clv-effects-page :is(h1, h2, h3, p, ol, small) {
+  margin: 0;
+}
+
+.clv-effects-page__intro,
+.clv-effects-section,
+.clv-effects-section > header,
+.clv-effects-antiuse,
+.clv-effects-antiuse > header,
+.clv-effects-fallback,
+.clv-effects-fallback > header {
+  display: grid;
+}
+
+.clv-effects-page__intro {
+  gap: var(--clv-spacing-flow-stack-sm);
+  max-inline-size: var(--clv-layout-container-reading);
+}
+
+.clv-effects-page__eyebrow {
+  color: var(--clv-color-action-primary);
+  font-size: var(--clv-typography-label-compact-font-size);
+  font-weight: var(--clv-typography-label-compact-font-weight);
+  letter-spacing: var(--clv-font-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.clv-effects-page__intro h1 {
+  font-size: var(--clv-typography-heading-page-font-size);
+  font-weight: var(--clv-typography-heading-page-font-weight);
+  line-height: var(--clv-typography-heading-page-line-height);
+}
+
+:where(.clv-effects-page p, .clv-effects-page small) {
+  color: var(--clv-color-text-secondary);
+  line-height: var(--clv-typography-body-long-line-height);
+}
+
+.clv-effects-section,
+.clv-effects-antiuse,
+.clv-effects-fallback {
+  gap: var(--clv-spacing-flow-stack-lg);
+}
+
+.clv-effects-section > header,
+.clv-effects-antiuse > header,
+.clv-effects-fallback > header {
+  gap: var(--clv-spacing-flow-stack-xs);
+}
+
+.clv-effects-contract,
+.clv-effects-boundaries,
+.clv-effects-antiuse > div,
+.clv-effects-checks {
+  display: grid;
+  gap: var(--clv-layout-grid-gap-compact);
+}
+
+.clv-effects-contract {
+  list-style: none;
+  padding: 0;
+}
+
+.clv-effects-contract li,
+.clv-effects-boundaries article,
+.clv-effects-antiuse article,
+.clv-effects-checks article,
+.clv-effects-aliases,
+.clv-effects-budget,
+.clv-effects-fallback {
+  background: var(--clv-color-surface-raised);
+  border: var(--clv-border-width-thin) var(--clv-border-style-solid) var(--clv-color-border-subtle);
+  border-radius: var(--clv-shape-surface);
+  min-inline-size: 0;
+}
+
+.clv-effects-contract li,
+.clv-effects-boundaries article,
+.clv-effects-antiuse article,
+.clv-effects-checks article,
+.clv-effects-aliases,
+.clv-effects-budget {
+  display: grid;
+  gap: var(--clv-spacing-flow-stack-sm);
+  padding: var(--clv-spacing-inset-md);
+}
+
+.clv-effects-contract code,
+.clv-effects-contract small,
+.clv-effects-aliases code {
+  overflow-wrap: anywhere;
+}
+
+.clv-effects-swatch {
+  background:
+    radial-gradient(circle at 30% 25%, var(--clv-color-accent-secondary) 0 8%, transparent 34%),
+    var(--clv-color-surface-brand);
+  block-size: 6rem;
+  border-radius: var(--clv-radius-md);
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.clv-effects-swatch--brandMedia,
+.clv-effects-swatch--brandSurface,
+.clv-effects-swatch--floatingSurface,
+.clv-effects-swatch--glassControl {
+  backdrop-filter: blur(var(--clv-effects-sample));
+}
+
+.clv-effects-swatch--brandMedia::before,
+.clv-effects-swatch--brandSurface::before,
+.clv-effects-swatch--floatingSurface::before,
+.clv-effects-swatch--glassControl::before {
+  background: var(--clv-color-surface-brand-glass);
+  content: "";
+  inset: var(--clv-space-3);
+  position: absolute;
+}
+
+.clv-effects-swatch--brand {
+  box-shadow: var(--clv-effects-sample);
+}
+
+.clv-effects-boundaries article:first-child {
+  box-shadow: var(--clv-effect-highlight-brand);
+}
+
+.clv-effects-boundaries article:nth-child(2) {
+  box-shadow: var(--clv-elevation-raised);
+}
+
+.clv-effects-boundaries article:nth-child(3) {
+  outline: var(--clv-focus-width) var(--clv-focus-style) var(--clv-color-focus-outline);
+  outline-offset: var(--clv-focus-offset);
+}
+
+.clv-effects-boundaries article:nth-child(5) {
+  background: var(--clv-gradient-surface-action);
+  color: var(--clv-color-text-inverse);
+}
+
+.clv-effects-boundaries article:nth-child(5) p {
+  color: var(--clv-color-text-on-brand-muted);
+}
+
+.clv-effects-antiuse article {
+  border-color: var(--clv-color-status-danger-border);
+}
+
+.clv-effects-pilots {
+  display: grid;
+  gap: var(--clv-spacing-flow-stack-lg);
+}
+
+.clv-effects-action-preview {
+  align-items: center;
+  background: var(--clv-color-surface-brand);
+  border-radius: var(--clv-shape-surface);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--clv-spacing-flow-inline-md);
+  padding: var(--clv-spacing-inset-lg);
+}
+
+.clv-effects-dock-preview {
+  background: var(--clv-color-action-primary-subtle);
+  border-radius: var(--clv-shape-surface);
+  min-block-size: 14rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.clv-effects-dock-preview .clv-sticky-action-bar {
+  position: absolute;
+}
+
+.clv-effects-fallback {
+  padding: var(--clv-spacing-inset-lg);
+}
+
+.clv-effects-fallback.is-no-backdrop :is(.clv-brand-panel, .clv-button--glass) {
+  backdrop-filter: none;
+  background: var(--clv-color-surface-brand);
+  -webkit-backdrop-filter: none;
+}
+
+.clv-effects-fallback.is-no-backdrop .clv-brand-panel {
+  --clv-brand-panel-description: var(--clv-color-text-inverse);
+  --clv-brand-panel-eyebrow: var(--clv-color-text-inverse);
+}
+
+.clv-effects-fallback.is-no-backdrop :is(.clv-brand-panel__description, .clv-brand-panel__eyebrow) {
+  color: var(--clv-color-text-inverse);
+}
+
+.clv-effects-budget {
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+}
+
+@media (min-width: 48rem) {
+  .clv-effects-page {
+    padding-inline: var(--clv-layout-gutter-regular);
+  }
+
+  .clv-effects-contract,
+  .clv-effects-boundaries,
+  .clv-effects-antiuse > div,
+  .clv-effects-checks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .clv-effects-contract {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .clv-effects-boundaries,
+  .clv-effects-antiuse > div,
+  .clv-effects-checks {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (forced-colors: active) {
+  .clv-effects-swatch,
+  .clv-effects-contract li,
+  .clv-effects-boundaries article,
+  .clv-effects-antiuse article,
+  .clv-effects-checks article,
+  .clv-effects-aliases,
+  .clv-effects-budget,
+  .clv-effects-fallback {
+    background: Canvas;
+    border-color: CanvasText;
+    box-shadow: none;
+    color: CanvasText;
+    forced-color-adjust: none;
+  }
+
+  .clv-effects-swatch {
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clv-effects-page * {
+    transition-duration: var(--clv-motion-duration-instant);
+  }
+}

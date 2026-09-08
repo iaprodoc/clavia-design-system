@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="3847.4" height="2784.4" viewBox="0 0 3847.4 2784.4" fill="none" xmlns="http://www.w3.org/2000/svg">
+<title>Elipse de desfoque superior da Clavia</title>
+<g id="Ellipse 12" filter="url(#filter0_f_0_9)">
+<ellipse cx="1923.7" cy="1392.2" rx="1624.5" ry="1093" fill="#021826"/>
+</g>
+<defs>
+<filter id="filter0_f_0_9" x="0" y="0" width="3847.4" height="2784.4" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="149.6" result="effect1_foregroundBlur_0_9"/>
+</filter>
+</defs>
+</svg>

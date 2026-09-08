@@ -1,0 +1,164 @@
+.clv-hub-operational-analytics {
+  background: var(--clv-color-surface-canvas);
+  color: var(--clv-color-text-primary);
+  display: grid;
+  gap: var(--clv-spacing-section-md);
+  margin-inline: auto;
+  max-inline-size: var(--clv-layout-container-standard);
+  padding: var(--clv-layout-gutter-compact);
+  font-family: var(--clv-font-family-sans);
+}
+
+.clv-hub-operational-analytics--app-shell {
+  inline-size: 100%;
+  margin-inline: 0;
+  max-inline-size: none;
+}
+
+.clv-hub-operational-analytics__header {
+  display: grid;
+  gap: var(--clv-spacing-flow-stack-2xs);
+  max-inline-size: 52rem;
+}
+
+.clv-hub-operational-analytics__header p {
+  margin: 0;
+  color: var(--clv-color-text-secondary);
+  font-size: var(--clv-font-size-xs);
+  font-weight: var(--clv-font-weight-medium);
+  letter-spacing: var(--clv-font-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.clv-hub-operational-analytics__header h1 {
+  margin: 0;
+  font-size: var(--clv-font-size-2xl);
+  line-height: var(--clv-font-line-height-tight);
+}
+
+.clv-hub-operational-analytics__header span {
+  color: var(--clv-color-text-secondary);
+  font-size: var(--clv-font-size-sm);
+  line-height: var(--clv-font-line-height-relaxed);
+}
+
+.clv-hub-operational-analytics__priority {
+  inline-size: 100%;
+}
+
+.clv-hub-operational-analytics__metrics {
+  display: grid;
+  gap: var(--clv-spacing-grid-md);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.clv-hub-operational-analytics__metrics-context {
+  align-items: start;
+  background: var(--clv-table-row-background-hover);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--clv-space-3);
+  grid-column: 1 / -1;
+  justify-content: space-between;
+  border-radius: var(--clv-shape-surface);
+  padding: var(--clv-spacing-inset-md);
+}
+
+.clv-hub-operational-analytics__metrics-context h2,
+.clv-hub-operational-analytics__metrics-context p {
+  margin: 0;
+}
+
+.clv-hub-operational-analytics__metrics-context h2 {
+  color: var(--clv-color-text-primary);
+  font:
+    var(--clv-typography-heading-component-font-weight)
+    var(--clv-typography-heading-component-font-size) /
+    var(--clv-typography-heading-component-line-height)
+    var(--clv-typography-heading-component-font-family);
+}
+
+.clv-hub-operational-analytics__metrics-context p {
+  color: var(--clv-color-text-secondary);
+  font:
+    var(--clv-typography-body-supporting-font-weight)
+    var(--clv-typography-body-supporting-font-size) /
+    var(--clv-typography-body-supporting-line-height)
+    var(--clv-typography-body-supporting-font-family);
+}
+
+.clv-hub-operational-analytics__metrics-note {
+  max-inline-size: 20rem;
+}
+
+.clv-hub-operational-analytics__metrics .clv-metric-card {
+  border: 0;
+  box-shadow: var(--clv-elevation-raised);
+}
+
+.clv-hub-operational-analytics__metrics .clv-metric-card--success .clv-metric-card__trend {
+  color: var(--clv-color-status-success-strong);
+}
+
+.clv-hub-operational-analytics__metrics .clv-metric-card--warning .clv-metric-card__trend {
+  color: var(--clv-color-status-warning-strong);
+}
+
+.clv-hub-operational-analytics__project-list {
+  display: grid;
+  gap: var(--clv-spacing-flow-stack-md);
+  grid-template-columns: minmax(0, 1fr);
+  inline-size: 100%;
+  min-inline-size: 0;
+}
+
+.clv-hub-operational-analytics__filters {
+  background: var(--clv-color-surface-subtle);
+  border: 0;
+  box-shadow: none;
+  grid-column: 1 / -1;
+  inline-size: 100%;
+  justify-self: stretch;
+  min-inline-size: 0;
+}
+
+.clv-hub-operational-analytics__filters .clv-filter-bar__controls {
+  align-items: center;
+}
+
+.clv-hub-operational-analytics__table-surface {
+  background: var(--clv-color-surface-raised);
+  border-radius: var(--clv-shape-surface);
+  box-shadow: var(--clv-elevation-raised);
+  grid-column: 1 / -1;
+  inline-size: 100%;
+  justify-self: stretch;
+  min-inline-size: 0;
+  overflow: hidden;
+}
+
+.clv-hub-operational-analytics__boundary {
+  border-inline-start: var(--clv-border-width-thin) solid var(--clv-color-border-subtle);
+  color: var(--clv-color-text-secondary);
+  font-size: var(--clv-font-size-sm);
+  line-height: var(--clv-font-line-height-relaxed);
+  padding-inline-start: var(--clv-space-3);
+}
+
+@media (max-width: 47.9375rem) {
+  .clv-hub-operational-analytics__metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 48rem) {
+  .clv-hub-operational-analytics {
+    padding: var(--clv-layout-gutter-regular);
+  }
+}
+
+@media (min-width: 64rem) {
+  .clv-hub-operational-analytics {
+    padding: var(--clv-layout-gutter-wide);
+  }
+}
