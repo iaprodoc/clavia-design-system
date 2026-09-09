@@ -1,3 +1,5 @@
+"use client";
+
 import { CircleAlertIcon, CircleCheckIcon, InfoIcon, TriangleAlertIcon } from "@clavia-ds/icons";
 import { type ReactNode, useId } from "react";
 import { CloseButton } from "./CloseButton";

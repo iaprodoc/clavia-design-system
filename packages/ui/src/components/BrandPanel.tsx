@@ -1,3 +1,5 @@
+"use client";
+
 import { type HTMLAttributes, type ReactNode, useId } from "react";
 
 export type BrandPanelHeading = "h1" | "h2" | "h3" | "h4";

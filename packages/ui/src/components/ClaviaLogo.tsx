@@ -1,3 +1,5 @@
+"use client";
+
 import { type SVGProps, useId } from "react";
 
 export type ClaviaLogoLockup = "wordmark" | "tagline";

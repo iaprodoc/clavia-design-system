@@ -1,3 +1,5 @@
+"use client";
+
 import { PencilIcon, XIcon } from "@clavia-ds/icons";
 import { type ChangeEvent, type KeyboardEvent, useEffect, useId, useRef, useState } from "react";
 

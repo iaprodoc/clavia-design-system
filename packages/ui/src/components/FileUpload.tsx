@@ -1,3 +1,5 @@
+"use client";
+
 import { CircleAlertIcon, CircleCheckIcon, FileTextIcon } from "@clavia-ds/icons";
 import { type ChangeEvent, type DragEvent, useId, useRef, useState } from "react";
 

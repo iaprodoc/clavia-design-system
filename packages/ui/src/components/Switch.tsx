@@ -1,3 +1,5 @@
+"use client";
+
 import { forwardRef, type InputHTMLAttributes, type ReactNode, useId, useState } from "react";
 
 export type SwitchSize = "sm" | "md" | "lg";

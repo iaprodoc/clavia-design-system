@@ -1,3 +1,5 @@
+"use client";
+
 import { type SVGProps, useId } from "react";
 
 export interface ClaviaIconProps extends Omit<SVGProps<SVGSVGElement>, "height" | "width"> {
