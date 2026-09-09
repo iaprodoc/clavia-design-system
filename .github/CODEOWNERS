@@ -1,0 +1,8 @@
+# Todo o repo exige revisão. O design system é consumido por
+# clavia-site e clavia-salesops: um token removido aqui quebra
+# páginas lá sem nenhum erro de compilação.
+*                     @marco-fabian @fin-ship-it
+
+# Os tokens são a superfície mais perigosa — nenhum consumidor
+# recebe erro de tipo quando um deles some.
+/packages/tokens/     @marco-fabian @fin-ship-it
