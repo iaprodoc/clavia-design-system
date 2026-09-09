@@ -95,17 +95,30 @@ export const GatilhoCompacto: Story = {
 
     await expect(trigger).toHaveAttribute("data-trigger-variant", "compact");
     await expect(getComputedStyle(trigger).minBlockSize).toBe("36px");
+    // O gatilho tem transition em background-color e color. Sem zerar a
+    // duração, a asserção corre contra a animação e o resultado passa a
+    // depender da carga da máquina: esta story alternou entre verde e
+    // vermelho em execuções do mesmo commit. Zerar remove a corrida na
+    // origem, em vez de escondê-la atrás de um timeout maior — é o que o
+    // bloco prefers-reduced-motion do design system já faz, aqui aplicado
+    // só a este elemento.
+    trigger.style.setProperty("--clv-motion-feedback-duration", "0s");
+
     await userEvent.hover(trigger);
-    // O gatilho tem transition em background-color e color
-    // (--clv-motion-feedback-duration), então a asserção corre contra a
-    // animação. O waitFor padrão de 1s é apertado num runner carregado —
-    // era a causa da falha intermitente "esperado rgb(234, 241, 248)".
-    const settled = { timeout: 5000 };
-    await waitFor(
-      () => expect(getComputedStyle(trigger).backgroundColor).toBe("rgb(234, 241, 248)"),
-      settled,
-    );
-    await waitFor(() => expect(getComputedStyle(trigger).color).toBe("rgb(2, 24, 38)"), settled);
+
+    // Comparado contra o token resolvido, não contra um literal: o teste
+    // continua provando que o gatilho usa a superfície certa, sem ficar
+    // obsoleto no dia em que o valor do token mudar legitimamente.
+    const probe = document.createElement("span");
+    probe.style.color = getComputedStyle(document.documentElement)
+      .getPropertyValue("--clv-color-action-secondary")
+      .trim();
+    document.body.append(probe);
+    const expectedBackground = getComputedStyle(probe).color;
+    probe.remove();
+
+    await waitFor(() => expect(getComputedStyle(trigger).backgroundColor).toBe(expectedBackground));
+    await waitFor(() => expect(getComputedStyle(trigger).color).toBe("rgb(2, 24, 38)"));
     await userEvent.tab();
     await expect(trigger).toHaveFocus();
   },
