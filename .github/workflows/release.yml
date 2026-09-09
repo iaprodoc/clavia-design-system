@@ -11,6 +11,9 @@ concurrency:
 jobs:
   release:
     runs-on: ubuntu-latest
+    # Sem o token do npm não há o que publicar. Pular é melhor que falhar:
+    # um X vermelho permanente na main treina todo mundo a ignorar o sinal.
+    if: vars.NPM_PUBLISH_ENABLED == 'true'
     permissions:
       contents: write
       pull-requests: write
