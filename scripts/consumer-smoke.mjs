@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { mkdirSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -7,6 +7,17 @@ import { fileURLToPath } from "node:url";
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const temporaryRoot = mkdtempSync(join(tmpdir(), "clavia-consumer-smoke-"));
 const packages = ["tokens", "icons", "ui"];
+
+/**
+ * A versão é lida do manifesto, nunca fixada. Os overrides do pnpm casam por
+ * `nome@versão`: com a versão escrita à mão, o primeiro `changeset version`
+ * faria a chave parar de casar, o pnpm buscaria o pacote no registro e o
+ * smoke test quebraria exatamente no release em que ele mais importa.
+ */
+function packageVersion(packageName) {
+  const manifest = join(repositoryRoot, "packages", packageName, "package.json");
+  return JSON.parse(readFileSync(manifest, "utf8")).version;
+}
 
 function packPackage(packageName) {
   const packageDirectory = join(repositoryRoot, "packages", packageName);
@@ -98,8 +109,8 @@ try {
           },
           pnpm: {
             overrides: {
-              "@clavia-ds/icons@0.1.0": `file:${archives.icons}`,
-              "@clavia-ds/tokens@0.1.0": `file:${archives.tokens}`,
+              [`@clavia-ds/icons@${packageVersion("icons")}`]: `file:${archives.icons}`,
+              [`@clavia-ds/tokens@${packageVersion("tokens")}`]: `file:${archives.tokens}`,
             },
           },
           private: true,

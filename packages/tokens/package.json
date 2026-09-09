@@ -1,10 +1,22 @@
 {
   "name": "@clavia-ds/tokens",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Tokens do design system da Clavia — custom properties CSS, objeto tipado e JSON no formato W3C DTCG.",
+  "license": "UNLICENSED",
+  "private": false,
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iaprodoc/clavia-design-system.git",
+    "directory": "packages/tokens"
+  },
+  "homepage": "https://github.com/iaprodoc/clavia-design-system#readme",
+  "bugs": {
+    "url": "https://github.com/iaprodoc/clavia-design-system/issues"
+  },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "exports": {
     ".": {
@@ -13,6 +25,9 @@
     },
     "./css": "./dist/tokens.css",
     "./json": "./dist/tokens.json"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json && node scripts/copy-static.mjs",

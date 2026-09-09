@@ -96,10 +96,16 @@ export const GatilhoCompacto: Story = {
     await expect(trigger).toHaveAttribute("data-trigger-variant", "compact");
     await expect(getComputedStyle(trigger).minBlockSize).toBe("36px");
     await userEvent.hover(trigger);
-    await waitFor(() =>
-      expect(getComputedStyle(trigger).backgroundColor).toBe("rgb(234, 241, 248)"),
+    // O gatilho tem transition em background-color e color
+    // (--clv-motion-feedback-duration), então a asserção corre contra a
+    // animação. O waitFor padrão de 1s é apertado num runner carregado —
+    // era a causa da falha intermitente "esperado rgb(234, 241, 248)".
+    const settled = { timeout: 5000 };
+    await waitFor(
+      () => expect(getComputedStyle(trigger).backgroundColor).toBe("rgb(234, 241, 248)"),
+      settled,
     );
-    await waitFor(() => expect(getComputedStyle(trigger).color).toBe("rgb(2, 24, 38)"));
+    await waitFor(() => expect(getComputedStyle(trigger).color).toBe("rgb(2, 24, 38)"), settled);
     await userEvent.tab();
     await expect(trigger).toHaveFocus();
   },

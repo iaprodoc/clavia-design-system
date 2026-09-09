@@ -1,16 +1,31 @@
 {
   "name": "@clavia-ds/icons",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Ícones do design system da Clavia.",
+  "license": "UNLICENSED",
+  "private": false,
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iaprodoc/clavia-design-system.git",
+    "directory": "packages/icons"
+  },
+  "homepage": "https://github.com/iaprodoc/clavia-design-system#readme",
+  "bugs": {
+    "url": "https://github.com/iaprodoc/clavia-design-system/issues"
+  },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "peerDependencies": {
     "react": ">=18 <20"
