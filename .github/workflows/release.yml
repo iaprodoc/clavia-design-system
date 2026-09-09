@@ -1,0 +1,52 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.12.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Instalar chromium para os testes de story
+        run: pnpm --filter @clavia-ds/storybook exec playwright install --with-deps chromium
+
+      # Mesmo portão do CI: lint, builds, pack:check, smoke em React 18 e 19,
+      # install offline, typecheck e testes. Nada é publicado sem passar aqui.
+      - run: pnpm check
+
+      # Abre (ou atualiza) o PR "Version Packages" com os bumps e o changelog.
+      # Publica no npm somente quando esse PR é mesclado.
+      - uses: changesets/action@v1
+        with:
+          version: pnpm version-packages
+          publish: pnpm release
+          commit: "chore: versionar pacotes"
+          title: "chore: versionar pacotes"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

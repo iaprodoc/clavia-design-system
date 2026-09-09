@@ -10,17 +10,22 @@
   },
   "scripts": {
     "build": "pnpm --filter @clavia-ds/tokens build && pnpm --filter @clavia-ds/icons build && pnpm --filter @clavia-ds/ui build && pnpm --filter @clavia-ds/storybook build",
+    "changeset": "changeset",
     "check": "pnpm lint && pnpm build && pnpm pack:check && pnpm pack:smoke && pnpm install --offline --frozen-lockfile && pnpm typecheck && pnpm test",
     "format": "biome format --write .",
     "lint": "biome check .",
     "pack:check": "pnpm --filter @clavia-ds/tokens pack:check && pnpm --filter @clavia-ds/icons pack:check && pnpm --filter @clavia-ds/ui pack:check",
     "pack:smoke": "node scripts/consumer-smoke.mjs",
+    "release": "pnpm build && changeset publish",
     "storybook": "pnpm --filter @clavia-ds/storybook storybook",
     "test": "pnpm --filter @clavia-ds/tokens test && pnpm --filter @clavia-ds/icons test && pnpm --filter @clavia-ds/ui test && pnpm --filter @clavia-ds/storybook test",
-    "typecheck": "pnpm --filter @clavia-ds/tokens typecheck && pnpm --filter @clavia-ds/icons typecheck && pnpm --filter @clavia-ds/ui typecheck && pnpm --filter @clavia-ds/storybook typecheck"
+    "typecheck": "pnpm --filter @clavia-ds/tokens typecheck && pnpm --filter @clavia-ds/icons typecheck && pnpm --filter @clavia-ds/ui typecheck && pnpm --filter @clavia-ds/storybook typecheck",
+    "version-packages": "changeset version && pnpm install --lockfile-only"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.0",
+    "@changesets/changelog-github": "^1.0.1",
+    "@changesets/cli": "^3.0.2",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/react": "^19.2.14",

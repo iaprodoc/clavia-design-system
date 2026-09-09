@@ -1,0 +1,11 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
+  "changelog": ["@changesets/changelog-github", { "repo": "iaprodoc/clavia-design-system" }],
+  "commit": false,
+  "fixed": [["@clavia-ds/tokens", "@clavia-ds/icons", "@clavia-ds/ui"]],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": ["@clavia-ds/storybook"]
+}
