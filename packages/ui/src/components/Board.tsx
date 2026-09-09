@@ -1,3 +1,5 @@
+"use client";
+
 import { CalendarIcon, PlusIcon } from "@clavia-ds/icons";
 import { type ReactNode, useId } from "react";
 

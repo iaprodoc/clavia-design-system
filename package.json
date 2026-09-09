@@ -11,10 +11,11 @@
   "scripts": {
     "build": "pnpm --filter @clavia-ds/tokens build && pnpm --filter @clavia-ds/icons build && pnpm --filter @clavia-ds/ui build && pnpm --filter @clavia-ds/storybook build",
     "changeset": "changeset",
-    "check": "pnpm lint && pnpm build && pnpm pack:check && pnpm pack:smoke && pnpm install --offline --frozen-lockfile && pnpm typecheck && pnpm test",
+    "check": "pnpm lint && pnpm build && pnpm pack:check && pnpm pack:smoke && pnpm pack:rsc && pnpm install --offline --frozen-lockfile && pnpm typecheck && pnpm test",
     "format": "biome format --write .",
     "lint": "biome check .",
     "pack:check": "pnpm --filter @clavia-ds/tokens pack:check && pnpm --filter @clavia-ds/icons pack:check && pnpm --filter @clavia-ds/ui pack:check",
+    "pack:rsc": "node scripts/rsc-smoke.mjs",
     "pack:smoke": "node scripts/consumer-smoke.mjs",
     "release": "pnpm build && changeset publish",
     "storybook": "pnpm --filter @clavia-ds/storybook storybook",

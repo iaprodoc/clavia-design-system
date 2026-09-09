@@ -1,3 +1,5 @@
+"use client";
+
 import { SidebarIcon } from "@clavia-ds/icons";
 import type { ReactNode } from "react";
 import { useEffect, useId, useRef, useState } from "react";

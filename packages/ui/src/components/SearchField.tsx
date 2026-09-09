@@ -1,3 +1,5 @@
+"use client";
+
 import { SearchIcon, XIcon } from "@clavia-ds/icons";
 import { forwardRef, type InputHTMLAttributes, useId } from "react";
 

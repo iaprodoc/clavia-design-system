@@ -1,3 +1,5 @@
+"use client";
+
 import { type ButtonHTMLAttributes, type ReactNode, useState } from "react";
 
 export type ToggleSize = "sm" | "md" | "lg";

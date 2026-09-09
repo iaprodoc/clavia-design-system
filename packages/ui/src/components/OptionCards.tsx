@@ -1,3 +1,5 @@
+"use client";
+
 import { CheckIcon } from "@clavia-ds/icons";
 import { type ChangeEvent, type ReactNode, useId } from "react";
 

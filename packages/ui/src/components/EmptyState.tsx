@@ -1,3 +1,5 @@
+"use client";
+
 import { type ReactNode, useId } from "react";
 
 const emptyStateImageUrl = new URL("../assets/img_empty_state2.webp", import.meta.url).href;

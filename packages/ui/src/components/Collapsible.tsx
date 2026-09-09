@@ -1,3 +1,5 @@
+"use client";
+
 import { ChevronDownIcon } from "@clavia-ds/icons";
 import { type ReactNode, useId, useState } from "react";
 

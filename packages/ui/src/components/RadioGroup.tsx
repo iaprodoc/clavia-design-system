@@ -1,3 +1,5 @@
+"use client";
+
 import { type ChangeEvent, type ReactNode, useId } from "react";
 
 export interface RadioOption {

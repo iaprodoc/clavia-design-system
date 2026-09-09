@@ -1,3 +1,5 @@
+"use client";
+
 import { type ReactNode, useId } from "react";
 
 export type SectionHeading = "h2" | "h3" | "h4" | "h5" | "h6";

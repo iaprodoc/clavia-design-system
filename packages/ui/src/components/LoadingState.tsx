@@ -1,3 +1,5 @@
+"use client";
+
 import { type ReactNode, useId } from "react";
 
 export interface LoadingStateProps {
