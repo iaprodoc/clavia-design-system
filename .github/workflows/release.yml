@@ -3,6 +3,9 @@ name: Release
 on:
   push:
     branches: [main]
+  # Permite disparar o primeiro release sem precisar de um commit vazio:
+  # configurar o secret e a variável não dispara push nenhum.
+  workflow_dispatch:
 
 concurrency:
   group: release-${{ github.ref }}
